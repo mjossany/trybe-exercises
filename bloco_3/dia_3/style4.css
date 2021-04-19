@@ -1,0 +1,10 @@
+h1, p, li {
+    text-align: center;
+    list-style:none;
+}
+li:hover{
+    background-color:cadetblue;
+}
+li:active{
+    color:whitesmoke;
+}
