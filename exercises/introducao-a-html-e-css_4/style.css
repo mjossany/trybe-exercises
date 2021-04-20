@@ -69,26 +69,126 @@ h3 {
     background-color:black;
     color:white;
 }
+.h31 {
+    color: white;
+    background-color: black;
+    position:absolute;
+    top: 950px;
+    width:100%;
+}
+.p1 {
+    display: inline-block;
+    position: absolute;
+    max-width: 72%;
+    top: 1000px;
+}
+.img1 {
+    display:inline-block;
+    background-size:cover;
+    vertical-align: middle;
+    position:absolute;
+    right: 0;
+    top:1150px;
+}
+.p2 {
+    display: inline-block;
+    position: absolute;
+    max-width: 75%;
+    top: 1600px;
+    right: 0;
+}
+.h32{
+    color: white;
+    background-color: black;
+    position:absolute;
+    top: 1550px;
+    width:100%;
+}
+.img2 {
+    display:inline-block;
+    background-size:cover;
+    vertical-align: middle;
+    position:absolute;
+    right: 0;
+    top:1600px;
+    left: 0px;
+}
+.p3 {
+    display: inline-block;
+    position: absolute;
+    max-width: 100%;
+    top: 1875px;
+    right: 0;
+    text-align:center;
+}
+.h33{
+    color: white;
+    background-color: black;
+    position:absolute;
+    top: 1825px;
+    width:100%;
+}
+.img3 {
+    display:inline-block;
+    background-size:cover;
+    vertical-align: middle;
+    position:absolute;
+    top:1980px;
+    left:39%;
+}
+.p4 {
+    display: inline-block;
+    position: absolute;
+    max-width: 100%;
+    top: 2450px;
+    right: 0;
+    text-align:center;
+}
+.h34{
+    color: white;
+    background-color: black;
+    position:absolute;
+    top: 2200px;
+    width:100%;
+}
+.img4 {
+    display:inline-block;
+    background-image: url(imgstomatopoda5.jpeg);
+    background-size:cover;
+    vertical-align: middle;
+    position:absolute;
+    top:2250px;
+    left:39%;
+}
 .image {
     border-radius: 40%;
     border: 4px solid brown;
 }
-.img1 {
-    display:inline-block;
-    background-image: url(imgstomatopoda2.jpeg);
-    background-size:cover;
-    vertical-align: middle;
-    width:100px;
+.h4 {
+    color: white;
+    background-color: black;
+    position:absolute;
+    top: 2560px;
+    width:100%;
+    text-align: center;
 }
-
-.p1 {
-    display:inline-block;
-    max-width:30%;
-} 
-
+.ulbibli {
+    position:absolute;
+    top: 2600px;
+    border: 2px solid black;
+    margin: 10px 100px;
+    background-color:black;
+    color: white;
+    left:50%;
+    transform: translateX(-120%);
+}
 table {
     border: 2px solid black;
     margin: auto;
     text-align: center;
+}
+.footer {
+    position: absolute;
+    top: 5000px;
 }
 
