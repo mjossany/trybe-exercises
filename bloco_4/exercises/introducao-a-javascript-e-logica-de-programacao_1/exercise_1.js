@@ -168,3 +168,43 @@ if ((cost < 0) || (saleValue < 0)) {
 else {
     console.log(profitAfter1kSales);
 }
+
+//11. Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
+let grossSalary = 3000.00;
+let baseSalary = 0;
+let netSalary = 0;
+
+//Program
+if (grossSalary <= 1556.94) {
+    baseSalary = (grossSalary * 0.92);
+}
+else if (grossSalary >= 1556.95 && grossSalary <= 2594.92) {
+    baseSalary = (grossSalary * 0.91);
+}
+else if (grossSalary >= 2594.93 && grossSalary <= 5189,82) {
+    baseSalary = (grossSalary * 0.89);
+}
+else {
+    baseSalary = (grossSalary - 570.88)
+}
+let firstIR = ((baseSalary * 0.075) - 142.8);
+let secondIR = ((baseSalary * 0.15) - 354.8);
+let thirdIR = ((baseSalary * 0.225) - 636.13);
+let forthIR = ((baseSalary * 0.275) - 869.36);
+
+if (baseSalary <= 1903.88) {
+    netSalary = baseSalary;
+}
+else if (baseSalary >= 1903.99 && baseSalary <= 2826.65) {
+    netSalary = baseSalary - firstIR;
+}
+else if (baseSalary >= 2826.66 && baseSalary <= 3751.05) {
+    netSalary = baseSalary - secondIR;
+}
+else if (baseSalary >= 3751 && baseSalary <= 4664.68) {
+    netSalary = baseSalary - thirdIR;
+}
+else {
+    netSalary = baseSalary - forthIR;
+}
+console.log(netSalary);
