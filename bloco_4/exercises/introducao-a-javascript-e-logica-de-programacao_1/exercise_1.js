@@ -104,3 +104,39 @@ switch (chessPieceLowerCase) {
     default:
         console.log('Valor não identificado');
 }
+
+//7. Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras: Porcentagem >= 90 -> A Porcentagem >= 80 -> B Porcentagem >= 70 -> C Porcentagem >= 60 -> D Porcentagem >= 50 -> E Porcentagem < 50 -> F
+let grade = 1;
+
+//Program
+if (grade >= 90) { 
+    console.log('A');
+}
+else if (grade >= 80) {
+    console.log('B');
+}
+else if (grade >= 70) {
+    console.log('C');
+}
+else if (grade >= 60) {
+    console.log('D');
+}
+else if (grade >= 50) {
+    console.log('E');
+}
+else {
+    console.log('F');
+}
+
+//8. Escreva um programa que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false.
+let l = 1;
+let m = 2;
+let n = 3;
+
+//Program
+if ((l % 2 == 0) || (m % 2 == 0) || (n % 2 == 0)) {
+    console.log(true);
+}
+else {
+    console.log(false);
+}
