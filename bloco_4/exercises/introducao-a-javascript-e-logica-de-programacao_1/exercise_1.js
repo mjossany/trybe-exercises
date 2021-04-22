@@ -128,9 +128,9 @@ else {
     console.log('F');
 }
 
-//8. Escreva um programa que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false.
+//8. Escreva um programa que defina três números em variáveis e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false. Bonus: use somente um if.
 let l = 1;
-let m = 2;
+let m = 5;
 let n = 3;
 
 //Program
@@ -139,4 +139,32 @@ if ((l % 2 == 0) || (m % 2 == 0) || (n % 2 == 0)) {
 }
 else {
     console.log(false);
+}
+
+//9. Escreva um programa que defina três números em variáveis e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false. Bonus: use somente um if.
+let o = 2;
+let p = 6;
+let q = 4;
+
+//Program
+if ((o % 2 == 1) || (p % 2 == 1) || (q % 2 == 1)) {
+    console.log(true);
+}
+else {
+    console.log(false);
+}
+
+//10. Escreva um programa que se inicie com dois valores em duas variáveis diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.Atente que, sobre o custo do produto, incide um imposto de 20%. Seu programa também deve emitir uma mensagem de erro e encerrar caso algum dos seus valores de entrada seja menor que zero. O lucro de um produto é o resultado da subtração do valor de venda pelo custo do mesmo, sendo que o imposto de 20% também faz parte do valor de custo. valorCustoTotal = valorCusto + impostoSobreOCusto lucro = valorVenda - valorCustoTotal (lucro de um produto).
+let cost = 100;
+let saleValue = 150;
+let costWithTaxes = (cost * 1.2);
+let profit = (saleValue - costWithTaxes);
+let profitAfter1kSales = (profit * 1000);
+
+//Program
+if ((cost < 0) || (saleValue < 0)) {
+    console.log('Erro: algum dos valores de entrada é menor que zero');
+}
+else {
+    console.log(profitAfter1kSales);
 }
