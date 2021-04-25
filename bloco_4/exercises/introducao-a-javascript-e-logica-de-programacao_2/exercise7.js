@@ -4,7 +4,7 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 
 //First I have to find de highest value of the array and than encounter the smallest
 
-let higherValue = 0;
+let higherValue = numbers[1];
 for (let index = 0; index < numbers.length; index += 1) {
     if (numbers[index] > higherValue) {
         higherValue = numbers[index];
