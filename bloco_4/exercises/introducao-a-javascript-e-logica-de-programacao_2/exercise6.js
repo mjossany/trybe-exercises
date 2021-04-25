@@ -8,4 +8,8 @@ for (let index = 0; index < numbers.length; index += 1) {
         oddNumbers += 1;
     }
 }
-console.log(oddNumbers);
+if (oddNumbers != 0) {
+    console.log(oddNumbers);
+} else {
+    console.log('nenhum valor ímpar encontrado');
+}
