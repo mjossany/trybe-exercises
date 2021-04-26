@@ -1,6 +1,6 @@
-//4- Depois, faça uma pirâmide com n asteriscos de base:
+//5- Faça uma pirâmide com n asteriscos de base que seja vazia no meio. Assuma que o valor de n será sempre ímpar:
 
-let base = 7;
+let base = 5;
 
 for (let lines = 0; lines < base; lines += 2) {
     let asterisksLine = '';
@@ -14,4 +14,5 @@ for (let lines = 0; lines < base; lines += 2) {
         asterisksLine += ' ';
     }
     console.log (asterisksLine)
+    console.log();
 }
