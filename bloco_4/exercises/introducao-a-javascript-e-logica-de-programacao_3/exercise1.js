@@ -9,3 +9,16 @@ for (let lines = 0; lines < n; lines += 1) {
     };
     console.log(asteriskLine);
 };
+
+//or
+
+let n = 5
+let symbol = '*';
+let inputLine = '';
+
+for (let lineIndex = 0; lineIndex < n; lineIndex += 1) {
+  inputLine += symbol;
+};
+for (let lineIndex = 0; lineIndex < n; lineIndex += 1) {
+  console.log(inputLine);
+};
