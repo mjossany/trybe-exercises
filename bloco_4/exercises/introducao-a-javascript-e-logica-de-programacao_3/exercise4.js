@@ -1,6 +1,6 @@
 //4- Depois, faça uma pirâmide com n asteriscos de base:
 
-// let base = 7;
+// let base = 5;
 
 // for (let lines = 0; lines < base; lines += 2) {
 //     let asterisksLine = '';
@@ -18,7 +18,7 @@
 
 // or 
 
-let n = 5;
+let n = 7;
 let symbol = '*';
 let inputLine = '';
 
@@ -26,9 +26,9 @@ let midOfMatrix = (n + 1) / 2;
 let controlLeft = midOfMatrix;
 let controlRight = midOfMatrix;
 
-for (let lineIndex = 0; lineIndex <= midOfMatrix; lineIndex += 1) {
-    for (let columnIndex = 0; columnIndex <= n; columnIndex += 1) {
-        if (columnIndex > controlLeft && columnIndex < controlRight) {
+for (let lineIndex = 0; lineIndex < midOfMatrix; lineIndex += 1) {
+    for (let columnIndex = 1; columnIndex <= n; columnIndex += 1) {
+        if (columnIndex >= controlLeft && columnIndex <= controlRight || columnIndex === midOfMatrix) {
             inputLine += symbol;
         } else {
             inputLine += ' ';
