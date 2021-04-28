@@ -8,4 +8,8 @@ let info = {
 
 info['recorrente'] = 'Sim';
 
+//or
+
+info.recorrente = 'Sim';
+
 console.log(info);
