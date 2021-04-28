@@ -5,3 +5,5 @@ let info = {
 };
 
   console.log(`Bom dia, ${info.personagem}`);
+  //or
+  console.log('Bem-vinda, '+ info['personagem']);
