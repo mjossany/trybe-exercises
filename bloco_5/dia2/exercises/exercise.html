@@ -61,6 +61,7 @@
       let h1 = document.querySelector('body');
       let addH1 = document.createElement('h1');
       addH1.innerText = 'Exercício 5.2 - JavaScript DOM';
+      addH1.className = 'title';
       h1.appendChild(addH1);
 
       let div1 = document.querySelector('body');
@@ -85,6 +86,7 @@
       let div4 = document.querySelector('.main-content');
       let addDiv4 = document.createElement('div');
       addDiv4.className = 'right-content';
+      addDiv4.style.marginRight = 'auto';
       div4.appendChild(addDiv4);
 
       let img = document.querySelector('.left-content');
@@ -109,9 +111,14 @@
       let h3 = document.querySelector('.main-content');
       for (let index = 0; index < 3; index += 1) {
         let h3r = document.createElement('h3');
+        h3r.className = 'description';
         h3.appendChild(h3r);
       }
       
+      let rmvDiv = document.querySelector('.main-content');
+      rmvDiv.removeChild(document.querySelector('.left-content'));
+
+
     </script>
   </body>
 </html>
