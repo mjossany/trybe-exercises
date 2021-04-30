@@ -62,10 +62,36 @@
       let addH1 = document.createElement('h1');
       addH1.innerText = 'Exercício 5.2 - JavaScript DOM';
       h1.appendChild(addH1);
+
       let div1 = document.querySelector('body');
       let addDiv1 = document.createElement('div');
-      addH1.className = 'main-content';
+      addDiv1.className = 'main-content';
       div1.appendChild(addDiv1);
+
+      let div2 = document.querySelector('.main-content');
+      let addDiv2 = document.createElement('div');
+      addDiv2.className = 'center-content';
+      div2.appendChild(addDiv2);
+
+      let p = document.querySelector('.center-content');
+      let addP = document.createElement('p');
+      p.appendChild(addP);
+
+      let div3 = document.querySelector('.main-content');
+      let addDiv3 = document.createElement('div');
+      addDiv3.className = 'left-content';
+      div3.appendChild(addDiv3);
+
+      let div4 = document.querySelector('.main-content');
+      let addDiv4 = document.createElement('div');
+      addDiv4.className = 'right-content';
+      div4.appendChild(addDiv4);
+
+      let img = document.querySelector('.left-content');
+      let addImg = document.createElement('img');
+      img.src = 'https://picsum.photos/200';
+      img.className = 'small-image';
+      img.appendChild(addImg);
     </script>
   </body>
 </html>
