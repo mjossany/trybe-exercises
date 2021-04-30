@@ -89,9 +89,22 @@
 
       let img = document.querySelector('.left-content');
       let addImg = document.createElement('img');
-      img.src = 'https://picsum.photos/200';
-      img.className = 'small-image';
+      addImg.src = 'https://picsum.photos/200';
+      addImg.className = 'small-image';
       img.appendChild(addImg);
+
+      let ul = document.querySelector('.right-content');
+      let addUl = document.createElement('ul');
+      addUl.className = 'onetoten';
+      ul.appendChild(addUl);
+
+      let il = document.querySelector('.onetoten');
+      for (let index = 1; index <= 10; index += 1) {
+        let iln = index;
+        let ilitem = document.createElement('li');
+        ilitem.innerText = iln;
+        il.appendChild(ilitem);
+      }
     </script>
   </body>
 </html>
