@@ -72,6 +72,7 @@
       let div2 = document.querySelector('.main-content');
       let addDiv2 = document.createElement('div');
       addDiv2.className = 'center-content';
+      addDiv2.style.backgroundColor = 'green';
       div2.appendChild(addDiv2);
 
       let p = document.querySelector('.center-content');
@@ -105,6 +106,7 @@
         let iln = index;
         let ilitem = document.createElement('li');
         ilitem.innerText = iln;
+        ilitem.className = 'itens-list';
         il.appendChild(ilitem);
       }
 
@@ -117,6 +119,14 @@
       
       let rmvDiv = document.querySelector('.main-content');
       rmvDiv.removeChild(document.querySelector('.left-content'));
+
+      let itens = document.querySelectorAll('.itens-list');
+      for (let index = 0; index < itens.length; index += 1) {
+        let element = itens[index];
+        if (element.innerText.includes('9') || element.innerText.includes('10')) {
+          il.removeChild(element);
+        }
+      }
 
 
     </script>
