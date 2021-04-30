@@ -4,6 +4,6 @@ document.getElementsByClassName('center-content')[0].style.backgroundColor = 'wh
 document.getElementsByClassName('title')[0].innerText = 'Exercício 5.1 - JavaScript';
 let p = document.getElementsByTagName('p');
 for (let index = 0; index < p.length; index += 1) {
-  p[index] = p[index].toUpperCase();
+  p[index].innerText.toUpperCase();
   console.log(p[index]);
 }
