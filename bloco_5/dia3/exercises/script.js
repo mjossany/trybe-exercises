@@ -57,8 +57,20 @@ btnFeriados.addEventListener('click', function () {
   for (let index = 0; index < holidayDays.length; index += 1) {
     if (holidayDays[index].style.backgroundColor === newColor) {
       holidayDays[index].style.backgroundColor = backgroundColor;
-      } else {
-        holidayDays[index].style.backgroundColor = newColor;
-      }
+    } else {
+      holidayDays[index].style.backgroundColor = newColor;
+    }
   }
-})
+});
+
+//Exercício 4
+
+function buttonFriday(string) {
+  const father = document.querySelector('.buttons-container');
+  const btnFriday = document.createElement('button');
+  btnFriday.id = 'btn-friday';
+  btnFriday.innerHTML = 'Sexta-feira';
+
+  father.appendChild(btnFriday);
+};
+buttonFriday();
