@@ -47,3 +47,18 @@ function buttonHoliday(string) {
   father.appendChild(btnHoliday);
 }
 buttonHoliday();
+
+//Exercício 3
+const btnFeriados = document.querySelector('#btn-holiday');
+const newColor = 'white';
+const backgroundColor = "rgb(238,238,238)";
+btnFeriados.addEventListener('click', function () {
+  const holidayDays = document.getElementsByClassName('holiday');
+  for (let index = 0; index < holidayDays.length; index += 1) {
+    if (holidayDays[index].style.backgroundColor === newColor) {
+      holidayDays[index].style.backgroundColor = backgroundColor;
+      } else {
+        holidayDays[index].style.backgroundColor = newColor;
+      }
+  }
+})
