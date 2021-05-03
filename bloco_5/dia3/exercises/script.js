@@ -36,3 +36,14 @@ function calendarDays () {
   }
 }
 calendarDays();
+
+//Exercício 2
+
+function buttonHoliday(string) {
+  const father = document.querySelector('.buttons-container');
+  const btnHoliday = document.createElement('button');
+  btnHoliday.id = 'btn-holiday';
+  btnHoliday.innerHTML = 'Feriados';
+  father.appendChild(btnHoliday);
+}
+buttonHoliday();
