@@ -74,3 +74,19 @@ function buttonFriday(string) {
   father.appendChild(btnFriday);
 };
 buttonFriday();
+
+//Exercício 5
+
+const btnSexta = document.querySelector('#btn-friday');
+const msg = 'SEXTOUU!!';
+let fridayD = [4, 11, 18, 25];
+btnSexta.addEventListener ('click', function () {
+  const fridayDays = document.getElementsByClassName('friday');
+  for (let index = 0; index < fridayDays.length; index += 1) {
+    if (fridayDays[index].innerHTML !== msg) {
+      fridayDays[index].innerHTML = msg;
+    } else {
+      fridayDays[index].innerHTML = fridayD[index];
+    }
+  }
+});
