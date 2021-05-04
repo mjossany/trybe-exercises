@@ -114,3 +114,15 @@ function newAssignment(string) {
 };
 
 newAssignment('cozinhar');
+
+//Exercício 8
+
+function subtitle(color) {
+  const father = document.querySelector('.my-tasks');
+  const subtitle = document.createElement('div');
+  subtitle.style.backgroundColor = color;
+
+  father.appendChild(subtitle);
+}
+
+subtitle('green');
