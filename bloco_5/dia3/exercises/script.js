@@ -93,41 +93,24 @@ btnSexta.addEventListener ('click', function () {
 
 //Exercício 6
 
-// function dayMouseOver() {
-//   let days = document.querySelector('#days');
-
-//   days.addEventListener('mouseover', function(event) {
-//     event.target.style.fontSize = '30px';
-//     event.target.style.fontWeight = '600';
-//   })
-// };
-
-// function dayMouseOut() {
-//   let days = document.querySelector('#days');
-
-//   days.addEventListener('mouseout', function(event) {
-//     event.target.style.fontWeight = '200';
-//     event.target.style.fontSize = '20px';
-//   })
-// };
-
-// dayMouseOver();
-// dayMouseOut();
-function dayMouseOver() {
-  const monthDays = document.querySelector('#days');
-  monthDays.addEventListener('mouseover', (event) => {
-    event.target.style.fontSize = '30px';
-    event.target.style.fontWeight = '600';
+const monthDays = document.getElementsByClassName('day');
+for (let index = 0; index < monthDays.length; index += 1) {
+  monthDays[index].addEventListener('mouseover', function(event) {
+    event.target.style.fontSize = '25px';
+  });
+  monthDays[index].addEventListener('mouseout', function(event) {
+    event.target.style.fontSize = '20px';
   });
 };
 
-function dayMouseOut() {
-  const monthDays = document.querySelector('#days');
-  monthDays.addEventListener('mouseout', (event) => {
-    event.target.style.fontSize = '20px';
-    event.target.style.fontWeight = '200';
-  });
-}
+//Exercício 7
 
-dayMouseOver();
-dayMouseOut();
+function newAssignment(string) {
+  const father = document.querySelector('.my-tasks');
+  const assignment = document.createElement('span');
+  assignment.innerHTML = string;
+
+  father.appendChild(assignment);
+};
+
+newAssignment('cozinhar');
