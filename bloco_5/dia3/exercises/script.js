@@ -31,7 +31,6 @@ function calendarDays () {
     if (days === 4 || days === 11 || days === 18 || days === 25) {
       dayListItem.classList.add('friday');
     }
-    console.log(dayListItem);
     monthDaysList.appendChild(dayListItem);
   }
 }
@@ -39,81 +38,98 @@ calendarDays();
 
 //Exercício 2
 
-function buttonHoliday(string) {
-  const father = document.querySelector('.buttons-container');
-  const btnHoliday = document.createElement('button');
-  btnHoliday.id = 'btn-holiday';
-  btnHoliday.innerHTML = 'Feriados';
-  father.appendChild(btnHoliday);
+function createHolidayButton(buttonName) {
+  let buttonContainer = document.querySelector('.buttons-container');
+  let newButton = document.createElement('button');
+  let newButtonID = 'btn-holiday';
+
+  newButton.innerHTML = buttonName;
+  newButton.id = newButtonID;
+  buttonContainer.appendChild(newButton);
 }
-buttonHoliday();
+
+createHolidayButton('Feriadou');
 
 //Exercício 3
-const btnFeriados = document.querySelector('#btn-holiday');
-const newColor = 'white';
-const backgroundColor = "rgb(238,238,238)";
-btnFeriados.addEventListener('click', function () {
-  const holidayDays = document.getElementsByClassName('holiday');
-  for (let index = 0; index < holidayDays.length; index += 1) {
-    if (holidayDays[index].style.backgroundColor === newColor) {
-      holidayDays[index].style.backgroundColor = backgroundColor;
-    } else {
-      holidayDays[index].style.backgroundColor = newColor;
+function displayHolidays() {
+  let getHolidayButton = document.querySelector('#btn-holiday');
+  let getHolidays = document.querySelectorAll('.holiday');
+  let backgroundColor = 'rgb(238,238,238)';
+  let setNewColor = 'white';
+
+  getHolidayButton.addEventListener('click', function() {
+    for (let index = 0; index < getHolidays.length; index += 1) {
+      if (getHolidays[index].style.backgroundColor === setNewColor) {
+        getHolidays[index].style.backgroundColor = backgroundColor;
+      } else {
+        getHolidays[index].style.backgroundColor = setNewColor;
+      }
     }
-  }
-});
-
+  })
+}
+displayHolidays();
 //Exercício 4
+function createFridayButton(buttonName) {
+  let buttonContainer = document.querySelector('.buttons-container');
+  let newButton = document.createElement('button');
+  let newButtonID = 'btn-friday';
 
-function buttonFriday(string) {
-  const father = document.querySelector('.buttons-container');
-  const btnFriday = document.createElement('button');
-  btnFriday.id = 'btn-friday';
-  btnFriday.innerHTML = 'Sexta-feira';
-
-  father.appendChild(btnFriday);
-};
-buttonFriday();
+  newButton.innerHTML = buttonName;
+  newButton.id = newButtonID;
+  buttonContainer.appendChild(newButton);
+}
+createFridayButton('Frideiou');
 
 //Exercício 5
-
-const btnSexta = document.querySelector('#btn-friday');
-const msg = 'SEXTOUU!!';
-let fridayD = [4, 11, 18, 25];
-btnSexta.addEventListener ('click', function () {
-  const fridayDays = document.getElementsByClassName('friday');
-  for (let index = 0; index < fridayDays.length; index += 1) {
-    if (fridayDays[index].innerHTML !== msg) {
-      fridayDays[index].innerHTML = msg;
-    } else {
-      fridayDays[index].innerHTML = fridayD[index];
+function displayFridays(fridaysArray) {
+  let getFridayButton = document.querySelector('#btn-friday');
+  let fridays = document.getElementsByClassName('friday');
+  let newFridayText = 'FRIDOU o/';
+  
+  getFridayButton.addEventListener('click', function() {
+    for (let index = 0; index < fridays.length; index += 1) {
+      if (fridays[index].innerHTML !== newFridayText) {
+        fridays[index].innerHTML = newFridayText;
+      } else {
+        fridays[index].innerHTML = fridaysArray[index];
+      }
     }
-  }
-});
+  })
+}
+let dezFridays = [4, 11, 18, 25];
+displayFridays(dezFridays);
 
 //Exercício 6
+function dayMouseOver() {
+  let days = document.querySelector('#days');
 
-const monthDays = document.getElementsByClassName('day');
-for (let index = 0; index < monthDays.length; index += 1) {
-  monthDays[index].addEventListener('mouseover', function(event) {
-    event.target.style.fontSize = '25px';
-  });
-  monthDays[index].addEventListener('mouseout', function(event) {
+  days.addEventListener('mouseover', function(event) {
+    event.target.style.fontSize = '30px';
+    event.target.style.fontWeight = '600';
+  })
+}
+
+function dayMouseOut() {
+  let days = document.querySelector('#days');
+
+  days.addEventListener('mouseout', function(event) {
+    event.target.style.fontWeight = '200';
     event.target.style.fontSize = '20px';
-  });
-};
-
+  })
+}
+dayMouseOver();
+dayMouseOut();
 //Exercício 7
 
-function newAssignment(string) {
-  const father = document.querySelector('.my-tasks');
-  const assignment = document.createElement('span');
-  assignment.innerHTML = string;
+function newTaskSpan(task) {
+  let tasksContainer = document.querySelector('.my-tasks');
+  let taskName = document.createElement('span');
 
-  father.appendChild(assignment);
-};
+  taskName.innerHTML = task;
+  tasksContainer.appendChild(taskName);
+}
 
-newAssignment('cozinhar');
+newTaskSpan('Cozinhar');
 
 //Exercício 8
 
