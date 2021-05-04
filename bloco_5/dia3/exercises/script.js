@@ -139,3 +139,15 @@ for (let index = 0; index < taskDiv.length; index += 1) {
     }
   })
 }
+
+//Exercício 10
+const addEvent = document.querySelectorAll('.day');
+for (let index = 0; index < addEvent.length; index += 1) {
+  addEvent[index].addEventListener('click', function () {
+    if (addEvent[index].style.color !== 'green') {
+      addEvent[index].style.color = 'green';
+    } else {
+      addEvent[index].style.color = 'rgb(119,119,119)';
+    }
+  })
+};
