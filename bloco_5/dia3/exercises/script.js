@@ -121,8 +121,21 @@ function subtitle(color) {
   const father = document.querySelector('.my-tasks');
   const subtitle = document.createElement('div');
   subtitle.style.backgroundColor = color;
+  subtitle.classList.add('task');
 
   father.appendChild(subtitle);
 }
 
 subtitle('green');
+
+//Exercício 9
+const taskDiv = document.querySelectorAll('.task');
+for (let index = 0; index < taskDiv.length; index += 1) {
+  taskDiv[index].addEventListener('click', function () {
+    if (taskDiv[index].className === 'task selected') {
+      taskDiv[index].className = 'task';
+    } else {
+      taskDiv[index].className = 'task selected';
+    }
+  })
+}
