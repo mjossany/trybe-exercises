@@ -7,70 +7,79 @@
     <title>Formulario-curriculo</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <header class="form-header">
-      <h1>Formulário para cadastro de currículo</h1>
-      <p>Preencha os campos abaixo.</p>
+    <header class="container text-center">
+      <h1 class='display-4'>Formulário para cadastro de currículo</h1>
+      <p class='lead'>Preencha os campos abaixo.</p>
     </header>
+    <hr>
     <main>
       <form id="cv-form">
-        <div class="form-row">
-          <fieldset>
-            <div class="line-content">
-              <label for="name">Nome: </label>
-              <input type="text" name="name" id="name" maxlength="40" required>
+        <div class="container form-check">
+          <div>
+            <label class="form-label" for="name">Nome: </label>
+            <input class='form-control ' type="text" name="name" id="name" maxlength="40" required>
+          </div>
+          <div>
+            <label class="form-label" for="email">Endereço de e-mail: </label>
+            <input class='form-control' type="email" name="email" id="email" maxlength="50" required>
+          </div>
+          <div>
+            <label class="form-label" for="cpf-number">CPF: </label>
+            <input class='form-control' type="text" name="cpf" id="cpf-number" maxlength="11" required>
+          </div>
+          <div>
+            <label class="form-label" for="address">Endereço: </label>
+            <input class='form-control' type="text" name="address" id="address" maxlength="200" required>
+          </div>
+          <div>
+            <label class="form-label" for="city">Cidade: </label>
+            <input class='form-control' type="text" name="city" id="city" maxlength="200" required>
+          </div>
+          <div>
+            <label class="form-label" for="state">Estado: </label>
+            <select class='form-select' name="state" id="state"  required>
+              <option disabled selected value>Selecione seu estado</option>
+            </select>
+          </div>
+          <div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" value='tipo-domicilio' id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Casa
+              </label>
             </div>
-            <div class="line-content">
-              <label for="email">Endereço de e-mail: </label>
-              <input class="email-input" type="email" name="email" id="email" maxlength="50" required>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault"
+              value='tipo-domicilio' id="flexRadioDefault2" checked>
+              <label class="form-check-label" for="flexRadioDefault2">
+                Apartamento
+              </label>
             </div>
-            <div class="line-content">
-              <label for="cpf-number">CPF: </label>
-              <input type="text" name="cpf" id="cpf-number" maxlength="11" required>
-            </div>
-            <div class="line-content">
-              <label for="address">Endereço: </label>
-              <input type="text" name="address" id="address" maxlength="200" required>
-            </div>
-            <div class="line-content">
-              <label for="city">Cidade: </label>
-              <input type="text" name="city" id="city" maxlength="200" required>
-            </div>
-            <div class="line-content">
-              <label for="state">Estado: </label>
-              <select name="state" id="state"  required>
-                <option disabled selected value>Selecione seu estado</option>
-              </select>
-            </div>
-            <div class="line-content">
-              <label for="houseType">Tipo de imóvel: </label>
-              <input type="radio" name="houseType" id="house" value="house" checked required> <span>Casa</span>
-              <input type="radio" name="houseType" id="apartment" value="apartment" required>
-              <span>Apartamento</span>
-            </div>
-          </fieldset>
-          <fieldset>
-            <div class="line-content">
-              <label for="resume">Resumo do currículo: </label>
-              <textarea id="resume" name="resume" maxlength="1000" cols="100" rows="20" required></textarea>
-            </div>
-            <div class="line-content">
-              <label for="role">Cargo: </label>
-              <input type="text" name="role" id="role" maxlength="40" required>
-            </div>
-            <div class="line-content">
-              <label for="roleDescription">Descrição do cargo: </label>
-              <input type="text" id="roleDescription" name="roleDescription" required>
-            </div>
-            <div class="line-content">
-              <label for="startDate">Data de início: </label>
-              <input type="text" id='datepicker' class="input-data" name="startDate" value="" required>
-            </div>
-          </fieldset>
-          <button id='submit' class="submit-button" type="submit">Enviar</button>
-          <button class="clear-button" type="button">Limpar</button>
+          </div>
+          <div>
+            <label class="form-label" for="resume">Resumo do currículo: </label>
+            <textarea class='form-control' id="resume" name="resume" maxlength="1000" cols="100" rows="5" placeholder='Escreva sobre suas experiências profissionais em até 1000 carcteres' required></textarea>
+          </div>
+          <div>
+            <label class="form-label" for="role">Cargo: </label>
+            <input class='form-control' type="text" name="role" id="role" maxlength="40" required>
+          </div>
+          <div>
+            <label class="form-label" for="roleDescription">Descrição do cargo: </label>
+            <input class='form-control' type="text" id="roleDescription" name="roleDescription" required>
+          </div>
+          <div>
+            <label class="form-label" for="startDate">Data de início: </label>
+            <input class='form-control' type="text" id='datepicker' class="input-data" name="startDate" value="" required>
+          </div>
+          <div>
+            <button id='submit' class="btn btn-success" type="submit">Enviar</button>
+            <button class="btn btn-danger" type="reset">Limpar</button>
+          </div>
           <div id='final-message'>
           </div>
         </div>
