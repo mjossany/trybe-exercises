@@ -18,27 +18,42 @@
     </header>
     <hr>
     <main>
-      <form id="cv-form" method="GET">
+      <form id="cv-form" class='needs-validation' method="GET" novalidate>
         <div class="container form-check">
           <div>
             <label class="form-label" for="name">Nome: </label>
-            <input class='form-control ' type="text" name="name" id="name" maxlength="40" required>
+            <input class='form-control' type="text" name="name" id="name" maxlength="40" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="email">Endereço de e-mail: </label>
             <input class='form-control' type="email" name="email" id="email" maxlength="50" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="cpf-number">CPF: </label>
             <input class='form-control' type="text" name="cpf" id="cpf-number" maxlength="11" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="address">Endereço: </label>
             <input class='form-control' type="text" name="address" id="address" maxlength="200" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="city">Cidade: </label>
             <input class='form-control' type="text" name="city" id="city" maxlength="200" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="state">Estado: </label>
@@ -63,19 +78,31 @@
           </div>
           <div>
             <label class="form-label" for="resume">Resumo do currículo: </label>
-            <textarea class='form-control' id="resume" name="resume" maxlength="1000" cols="100" rows="5" placeholder='Escreva sobre suas experiências profissionais em até 1000 carcteres' required></textarea>
+            <textarea class='form-control' id="resume" name="resume" maxlength="1000" cols="100" rows="5" placeholder='Escreva sobre suas experiências profissionais em até 1000 caracteres' required></textarea>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="role">Cargo: </label>
             <input class='form-control' type="text" name="role" id="role" maxlength="40" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="roleDescription">Descrição do cargo: </label>
             <input class='form-control' type="text" id="roleDescription" name="roleDescription" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <label class="form-label" for="startDate">Data de início: </label>
             <input class='form-control' type="text" id='datepicker' class="input-data" name="startDate" value="" required>
+            <div class="invalid-feedback">
+              Campo obrigatório.
+            </div>
           </div>
           <div>
             <button id='submit' class="btn btn-success" type="submit">Enviar</button>
