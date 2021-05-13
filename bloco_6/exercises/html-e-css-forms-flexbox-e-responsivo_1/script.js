@@ -14,6 +14,11 @@ function preencheSelect() {
 }
 preencheSelect();
 
+var picker = new Pikaday({
+  field: document.getElementById('datepicker'),
+  format: 'DD/MM/YYYY'
+});
+
 // const catchDataInput = document.getElementById('input-datainicio');
 // function dateValidation() {
 //   if(catchDataInput.value.length === 0) {
