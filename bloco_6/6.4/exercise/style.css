@@ -63,6 +63,7 @@ body {
 }
 
 .movie-container div {
+  flex-grow: 1;
   flex-basis: 16%;
 }
 
