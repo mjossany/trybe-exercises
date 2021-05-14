@@ -38,3 +38,11 @@ body {
   list-style: none;
   margin-right: 10px;
 }
+
+.header-container > .box:nth-child(1) {
+  order: 2;
+}
+
+.header-container > .box:nth-child(2) {
+  order: 1;
+}
