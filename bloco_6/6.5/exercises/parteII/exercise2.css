@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    margin: 40px;
+  }
+
+  header p {
+    text-align: center;
+    font-size: x-large;
+  }
+
+  nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+  }
+
+  h2 {
+    font-size: medium;
+  }
+
+  h3 {
+    font-size: medium;
+  }
+
+  h1 {
+    font-size: large;
+    margin-top: 30px;
+  }
+}
