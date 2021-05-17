@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 #container {
   margin: 0 auto;
   width: 100%;
@@ -101,11 +107,56 @@
 }
 
 @media screen and (max-width: 375px) {
+
   #aside {
     display: none;
   }
 
   body {
     padding: 0;
+    max-width: 375px;
+    margin: 0;
+  }
+
+  #content-container {
+    width: 100%;
+    background: #FFF;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  #content {
+    width: 100%;
+    margin: 0;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    margin: 10px;
+    margin-top: 15px;
+    width: 90%;
+  }
+
+  img {
+    width: 80%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #header {
+    position: fixed;
+    width: 100%;
+  }
+
+  #navigation {
+    margin-top: 77px;
   }
 }
