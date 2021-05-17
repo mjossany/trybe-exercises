@@ -100,3 +100,8 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  #aside {
+    display: none;
+  }
+}
