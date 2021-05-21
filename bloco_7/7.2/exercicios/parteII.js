@@ -96,13 +96,10 @@ const createReport = (obj, teacher) => {
     const array = Object.keys(obj);
     for (index in array) {
       if (obj[array[index]].professor === teacher) {
-        count += obj[array[index]].numeroEstudantes
-        classes.push(obj[array[index]].materia);
+        relatório.estudantes += obj[array[index]].numeroEstudantes
+        relatório.aulas.push(obj[array[index]].materia);
       }
     }
-    relatório.aulas = classes;
-    relatório.estudantes = count;
-
-    console.log(relatório);
-  };
-  createReport(allLessons, 'Maria Clara');
+  return relatório;
+};
+  console.log(createReport(allLessons, 'Maria Clara'));
