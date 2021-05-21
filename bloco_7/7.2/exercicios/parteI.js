@@ -38,16 +38,17 @@ const customerInfo = (order) => {
   // Adicione abaixo as informações necessárias.
   console.log(`Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, Telefone: ${order.phoneNumber}, ${order.address.street}, Nº: ${order.address.number}, AP: ${order.address.apartment}.`);
 }
-
 customerInfo(order);
 
 
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
+  order.order.pizza.calabesa = {};
+  order.order.pizza.muzzarela = {};
   order.payment.total = 50;
   order.name = 'Luiz Silva';
-  console.log(`Olá ${order.name}, o total do seu pedido de muzzarella, calabresa e Coca-Cola Zero é R$ 50,00.`)
+  console.log(`Olá ${order.name}, o total do seu pedido de ${order.order.pizza[2]}, calabresa e Coca-Cola Zero é R$ 50,00.`)
 }
-
 orderModifier(order);
+console.log(order);
