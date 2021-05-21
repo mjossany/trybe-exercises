@@ -91,9 +91,8 @@ const createReport = (obj, teacher) => {
     aulas: [],
     estudantes: 0,
   }
-    let count = 0;
-    let classes = [];
     const array = Object.keys(obj);
+    console.log(Object.keys(obj));
     for (index in array) {
       if (obj[array[index]].professor === teacher) {
         relatório.estudantes += obj[array[index]].numeroEstudantes
