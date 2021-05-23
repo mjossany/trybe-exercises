@@ -495,3 +495,47 @@
 // assert.deepStrictEqual(getLargestNumber(parameter), result, 'Wrong result');
 
 // -------------------------------------------------------------------------------
+
+// Bonus 5
+
+const assert = require('assert');
+
+const verify = (string) => {
+  if (string.length <= 8 || string === null) {
+    return false;
+  }
+  let countUp = 0;
+  let countLower = 0;
+  let countNumber = 0;
+  for (let index = 0; index < string.length; index += 1) {
+    if (string[index] === string[index].toUpperCase()) {
+      countUp += 1;
+    }
+    if (string[index] === string[index].toLowerCase()) {
+      countLower += 1;
+    }
+    if (!isNaN(string[index])) {
+      countNumber += 1;
+    }
+  }
+  if (countUp < 1 || countLower < 1 || countNumber < 1) {
+    return false;
+  }
+
+  return true;
+};
+
+const parameter = 'ronaldo';
+const parameterII = '';
+const parameterIII = 'ronaldobrilhamuito';
+const parameterIV = 'RONALDOBRILHAMUITO';
+const parameterV = 'RONalDOBriLhaMuITo';
+const expected = false;
+
+
+assert.strictEqual(typeof verify, 'function');
+assert.deepStrictEqual(verify(parameter), expected);
+assert.deepStrictEqual(verify(parameterII), expected);
+assert.deepStrictEqual(verify(parameterIII), expected);
+assert.deepStrictEqual(verify(parameterIV), expected);
+assert.deepStrictEqual(verify(parameterIV), expected, 'wrong value');
