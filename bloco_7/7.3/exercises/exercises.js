@@ -330,82 +330,168 @@
 
 // Bonus 1
 
-const assert = require('assert');
+// const assert = require('assert');
 
-function getChange(payable, paid) {
-  const coins = [200, 100, 50, 20, 10, 5, 2, 1];
-  let change = [];
-  const { length } = coins;
-  let remaining = paid - payable;
+// function getChange(payable, paid) {
+//   const coins = [200, 100, 50, 20, 10, 5, 2, 1];
+//   let change = [];
+//   const { length } = coins;
+//   let remaining = paid - payable;
 
-  // escreva seu código aqui...
+//   // escreva seu código aqui...
 
-  if (paid < payable) {
-    throw new Error('paid value is not enough');
-  }
+//   if (paid < payable) {
+//     throw new Error('paid value is not enough');
+//   }
 
-  if (payable === paid) {
-    change = [];
-  }
+//   if (payable === paid) {
+//     change = [];
+//   }
 
-  while (remaining >= 200) {
-    change.push(coins[0]);
-    remaining -= 200;
-  }
+//   while (remaining >= 200) {
+//     change.push(coins[0]);
+//     remaining -= 200;
+//   }
 
-  while (remaining >= 100 && remaining < 200) {
-    change.push(coins[1]);
-    remaining -= 100;
-  }
+//   while (remaining >= 100 && remaining < 200) {
+//     change.push(coins[1]);
+//     remaining -= 100;
+//   }
 
-  while (remaining >= 50 && remaining < 100) {
-    change.push(coins[2]);
-    remaining -= 50;
-  }
+//   while (remaining >= 50 && remaining < 100) {
+//     change.push(coins[2]);
+//     remaining -= 50;
+//   }
 
-  while (remaining >= 20 && remaining < 50) {
-    change.push(coins[3]);
-    remaining -= 20;
-  }
+//   while (remaining >= 20 && remaining < 50) {
+//     change.push(coins[3]);
+//     remaining -= 20;
+//   }
 
-  while (remaining >= 10 && remaining < 20) {
-    change.push(coins[4])
-    remaining -= 10;
-  }
+//   while (remaining >= 10 && remaining < 20) {
+//     change.push(coins[4])
+//     remaining -= 10;
+//   }
 
-  while (remaining >= 5 && remaining < 10) {
-    change.push(coins[5])
-    remaining -= 5;
-  }
+//   while (remaining >= 5 && remaining < 10) {
+//     change.push(coins[5])
+//     remaining -= 5;
+//   }
 
-  while (remaining >= 2 && remaining < 5) {
-    change.push(coins[6])
-    remaining -= 2;
-  }
+//   while (remaining >= 2 && remaining < 5) {
+//     change.push(coins[6])
+//     remaining -= 2;
+//   }
 
-  while (remaining === 1) {
-    change.push(coins[7])
-    remaining -= 1;
-  }
+//   while (remaining === 1) {
+//     change.push(coins[7])
+//     remaining -= 1;
+//   }
 
-  return change;
-}
+//   return change;
+// }
 
-let result = getChange(20, 20); // no change/coins just an empty array
-let expected = [];
-assert.deepStrictEqual(result, expected);
+// let result = getChange(20, 20); // no change/coins just an empty array
+// let expected = [];
+// assert.deepStrictEqual(result, expected);
 
-result = getChange(215, 300); // expect an array containing [50, 20, 10, 5]
-expected = [50, 20, 10, 5];
-assert.deepStrictEqual(result, expected);
+// result = getChange(215, 300); // expect an array containing [50, 20, 10, 5]
+// expected = [50, 20, 10, 5];
+// assert.deepStrictEqual(result, expected);
 
-result = getChange(486, 600); // expect an array containing [100, 10, 2, 2]
-expected = [100, 10, 2, 2];
-assert.deepStrictEqual(result, expected);
+// result = getChange(486, 600); // expect an array containing [100, 10, 2, 2]
+// expected = [100, 10, 2, 2];
+// assert.deepStrictEqual(result, expected);
 
-result = getChange(12, 400); // expect an array containing [200, 100, 50, 20, 10, 5, 2, 1]
-expected = [200, 100, 50, 20, 10, 5, 2, 1];
-assert.deepStrictEqual(result, expected);
+// result = getChange(12, 400); // expect an array containing [200, 100, 50, 20, 10, 5, 2, 1]
+// expected = [200, 100, 50, 20, 10, 5, 2, 1];
+// assert.deepStrictEqual(result, expected);
 
-assert.throws(() => { getChange(100, 10); }, /^Error: paid value is not enough$/);
+// assert.throws(() => { getChange(100, 10); }, /^Error: paid value is not enough$/);
 
+// -------------------------------------------------------------------------------
+
+// Bonus 2
+
+// const assert = require('assert');
+// // escreva a função factorial aqui
+
+// const factorial = number => number > 1 ? number * factorial(number - 1) : 1
+
+// const in1 = 5;
+// const exp1 = 120;
+
+// const in2 = 9;
+// const exp2 = 362880;
+
+// const in3 = 1;
+// const exp3 = 1;
+
+// const in4 = 0;
+// const exp4 = 1;
+
+// const in5 = 3;
+// const exp5 = 6;
+
+// const out1 = factorial(in1);
+// const out2 = factorial(in2);
+// const out3 = factorial(in3);
+// const out4 = factorial(in4);
+// const out5 = factorial(in5);
+
+// assert.strictEqual(out1, exp1);
+// assert.strictEqual(out2, exp2);
+// assert.strictEqual(out3, exp3);
+// assert.strictEqual(out4, exp4);
+// assert.strictEqual(out5, exp5);
+
+// -------------------------------------------------------------------------------
+
+// Bonus 3
+
+// const assert = require('assert');
+// // escreva a função removeMiddle aqui
+
+// const removeMiddle = (arr) => {
+//   const middleIndex = Math.floor(arr.length / 2);
+//   const output = [arr[middleIndex]];
+//   words.splice(middleIndex, 1);
+//   return output;
+// };
+
+// const words = ['mouse', 'giraffe', 'queen', 'window', 'bottle'];
+// const expectedWords = ['mouse', 'giraffe', 'window', 'bottle'];
+// const expectedOutput = ['queen'];
+// const output = removeMiddle(words);
+
+// assert.deepStrictEqual(output, expectedOutput);
+// assert.deepStrictEqual(words, expectedWords);
+
+// -------------------------------------------------------------------------------
+
+// Bonus 4
+
+// const assert = require('assert');
+
+// const getLargestNumber = (array) => {
+//   // let largestNumber = array[0];
+//   // for (let index = 1; index < array.length; index += 1) {
+//   //   if (array[index] > largestNumber) {
+//   //     largestNumber = array[index];
+//   //   }
+//   // }
+//   // return largestNumber;
+
+//   // or
+
+//   array.sort(function (a, b) {return b - a});
+//   return array[0];
+// }
+
+// const parameter = [45, 8, 2, 50, 1, 7, 99];
+// const result = 99;
+
+// assert.strictEqual(typeof getLargestNumber, 'function');
+// assert.deepStrictEqual(getLargestNumber(parameter), result, 'Wrong result');
+
+// -------------------------------------------------------------------------------
