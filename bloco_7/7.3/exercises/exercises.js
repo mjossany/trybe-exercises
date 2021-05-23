@@ -307,23 +307,105 @@
 
 // Exercício 4
 
-const assert = require('assert');
+// const assert = require('assert');
 
-function secondThirdSmallest(array) {
-  let results = [];
-  array.sort(function (x, y) {
-      return x - y;
-  });
-  results = [array[1], array[2]];
-  return results;
-};
+// function secondThirdSmallest(array) {
+//   let results = [];
+//   array.sort(function (x, y) {
+//       return x - y;
+//   });
+//   results = [array[1], array[2]];
+//   return results;
+// };
 
-const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
-const result = [5, 6];
+// const parameter = [4, 10, 32, 9, 21, 90, 5, 11, 8, 6];
+// const result = [5, 6];
 
-assert.strictEqual(typeof secondThirdSmallest, 'function');
-assert.deepStrictEqual(secondThirdSmallest(parameter), result, 'Wrong result');
+// assert.strictEqual(typeof secondThirdSmallest, 'function');
+// assert.deepStrictEqual(secondThirdSmallest(parameter), result, 'Wrong result');
 
 // console.log(secondThirdSmallest(parameter));
 
 // -------------------------------------------------------------------------------
+
+// Bonus 1
+
+const assert = require('assert');
+
+function getChange(payable, paid) {
+  const coins = [200, 100, 50, 20, 10, 5, 2, 1];
+  let change = [];
+  const { length } = coins;
+  let remaining = paid - payable;
+
+  // escreva seu código aqui...
+
+  if (paid < payable) {
+    throw new Error('paid value is not enough');
+  }
+
+  if (payable === paid) {
+    change = [];
+  }
+
+  while (remaining >= 200) {
+    change.push(coins[0]);
+    remaining -= 200;
+  }
+
+  while (remaining >= 100 && remaining < 200) {
+    change.push(coins[1]);
+    remaining -= 100;
+  }
+
+  while (remaining >= 50 && remaining < 100) {
+    change.push(coins[2]);
+    remaining -= 50;
+  }
+
+  while (remaining >= 20 && remaining < 50) {
+    change.push(coins[3]);
+    remaining -= 20;
+  }
+
+  while (remaining >= 10 && remaining < 20) {
+    change.push(coins[4])
+    remaining -= 10;
+  }
+
+  while (remaining >= 5 && remaining < 10) {
+    change.push(coins[5])
+    remaining -= 5;
+  }
+
+  while (remaining >= 2 && remaining < 5) {
+    change.push(coins[6])
+    remaining -= 2;
+  }
+
+  while (remaining === 1) {
+    change.push(coins[7])
+    remaining -= 1;
+  }
+
+  return change;
+}
+
+let result = getChange(20, 20); // no change/coins just an empty array
+let expected = [];
+assert.deepStrictEqual(result, expected);
+
+result = getChange(215, 300); // expect an array containing [50, 20, 10, 5]
+expected = [50, 20, 10, 5];
+assert.deepStrictEqual(result, expected);
+
+result = getChange(486, 600); // expect an array containing [100, 10, 2, 2]
+expected = [100, 10, 2, 2];
+assert.deepStrictEqual(result, expected);
+
+result = getChange(12, 400); // expect an array containing [200, 100, 50, 20, 10, 5, 2, 1]
+expected = [200, 100, 50, 20, 10, 5, 2, 1];
+assert.deepStrictEqual(result, expected);
+
+assert.throws(() => { getChange(100, 10); }, /^Error: paid value is not enough$/);
+
