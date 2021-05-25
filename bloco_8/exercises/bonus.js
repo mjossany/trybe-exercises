@@ -33,5 +33,19 @@ const dragonDamage = (callback) => {
 };
 
 const dragonDamageNumber = () => {
-  return Math.round(Math.random() * (dragon.strength));
+  return Math.round(Math.random() * ((dragon.strength) - 15) + 15);
 };
+
+
+// // 2 - Crie uma função que retorna o dano causado pelo warrior .
+// O dano será um número aleatório entre o valor do atributo strength (dano mínimo) e o valor de strength * weaponDmg (dano máximo).
+
+const warriorDamage = (callback) => {
+  const damageNumber = callback();
+  return damageNumber;
+};
+
+const warriorDamageNumber = () => {
+  return Math.round(Math.random() * ((warrior.strength * warrior.weaponDmg) - warrior.strength) + warrior.strength);
+};
+console.log(warriorDamageNumber());
