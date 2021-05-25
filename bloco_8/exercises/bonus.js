@@ -48,4 +48,29 @@ const warriorDamage = (callback) => {
 const warriorDamageNumber = () => {
   return Math.round(Math.random() * ((warrior.strength * warrior.weaponDmg) - warrior.strength) + warrior.strength);
 };
-console.log(warriorDamageNumber());
+
+// 3 - Crie uma função que retorna um objeto com duas chaves e dois valores contendo o dano e a mana gasta pelo mago em um turno.
+// O dano será um número aleatório entre o valor do atributo intelligence (dano mínimo) e o valor de intelligence * 2 (dano máximo).
+// A mana consumida por turno é 15. Além disto a função deve ter uma condicional, caso o mago tenha menos de 15 de mana o valor de dano recebe uma mensagem (Ex: "Não possui mana suficiente") e a mana gasta é 0.
+
+const mageDamageManaPerRound = (callback) => {
+  
+  const objDamageMana = {
+    damage: 0,
+    mana: 0,
+  };
+  
+  if (mage.mana < 15) {
+    objDamageMana.damage = 'Não possui mana suficiente';
+    objDamageMana.mana = 0;
+  } else {
+    objDamageMana.damage = callback();
+    objDamageMana.mana = 15;
+  }
+
+  return objDamageMana
+};
+
+const mageDamage = () => {
+  return Math.round(Math.random() * ((mage.intelligence * 2) - mage.intelligence) + mage.intelligence);
+};
