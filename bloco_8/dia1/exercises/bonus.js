@@ -76,6 +76,7 @@ const gameActions = {
   mageTurn: (callback) => {
   const damage = callback();
   mage.damage = damage.damage;
+  mage.mana -= damage.mana;
   dragon.healthPoints -= damage.damage;
   },
 
@@ -95,5 +96,9 @@ const gameActions = {
   }
 };
 
+console.log(gameActions.roundEnd());
+console.log(gameActions.roundEnd());
+console.log(gameActions.roundEnd());
+console.log(gameActions.roundEnd());
 console.log(gameActions.roundEnd());
 
