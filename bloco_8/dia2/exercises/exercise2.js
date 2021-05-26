@@ -63,13 +63,20 @@ const books = [
   },
 ];
 
-// Adicione o código do exercício aqui:
+// 2 - Retorne o nome do livro de menor nome.
+// Dica: use a função forEach .
 
-//1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
-// Dica: use a função find.
-
-function authorBornIn1947() {
+function smallerName() {
+  let nameBook = 'O Chamado de Cthulhu';
   // escreva aqui o seu código
-  return books.find((index) => index.author.birthYear === 1947).author.name;
-};
-assert.strictEqual(authorBornIn1947(), 'Stephen King');
+  books.forEach((index) => {
+    if (index.name.length < nameBook.length) {
+      nameBook = index.name;
+    }
+  })
+  // Variável nameBook que receberá o valor do menor nome;
+  return nameBook;
+}
+console.log(smallerName());
+
+assert.strictEqual(smallerName(), 'Duna');
