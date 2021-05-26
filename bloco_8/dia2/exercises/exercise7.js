@@ -66,6 +66,7 @@ const books = [
 // 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
 
 const expectedResult = false;
+
 // Solução retirada do repositório do colega de Trybe Roberval Filho https://github.com/rslfilho/trybe-exercises/blob/e10741fe60a0dea3957b213ec3e7748e4b4d0693/exercises/bloco_8/dia_2/exercicio_7.js
 
 function authorUnique() {
