@@ -67,8 +67,6 @@ const books = [
 
 const expectedResult = false;
 
-// Solução retirada do repositório do colega de Trybe Roberval Filho https://github.com/rslfilho/trybe-exercises/blob/e10741fe60a0dea3957b213ec3e7748e4b4d0693/exercises/bloco_8/dia_2/exercicio_7.js
-
 function authorUnique() {
 
   const birthYears = [];
@@ -82,23 +80,9 @@ function authorUnique() {
   })
   return bool;
 }
+assert.strictEqual(authorUnique(), expectedResult);
 
-console.log(authorUnique());
 
-// assert.strictEqual(authorUnique(), expectedResult);
-//   const birthYears = [];
-    
-//   books.forEach((book) => birthYears.push(book.author.birthYear));
 
-//   let result = true;
 
-//   birthYears.forEach((year) => {
-//     let counter = 0;
-//     for (let value of birthYears) {
-//       if (year === value) counter += 1;
-//     }
-//     if (counter > 1) result = false;
-//   });
-  
-//   return result;
-// }
+
