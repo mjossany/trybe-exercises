@@ -14,7 +14,6 @@ function flatten() {
     crr.forEach((element) => acc.push(element));
     return acc;
   });
-
 }
 
 assert.deepStrictEqual(flatten(), ['1', '2', '3', true, 4, 5, 6]);
