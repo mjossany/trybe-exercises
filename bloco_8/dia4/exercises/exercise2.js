@@ -6,8 +6,9 @@ const expectedResult = 'George R. R. MartinJ. R. R. TolkienIsaac AsimovFrank Her
 
 function averageAge() {
   // escreva seu código aqui
-  return books.reduce((acc, book) => acc += book.author.name, '');
+  const string = books.reduce((acc, book) => acc += `${book.author.name}, `, '');
+  return `${string}.`
 }
-// console.log(averageAge())
+console.log(averageAge())
 
-assert.strictEqual(averageAge(), expectedResult);
+// assert.strictEqual(averageAge(), expectedResult);
