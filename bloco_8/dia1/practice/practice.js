@@ -43,5 +43,5 @@ const wakeUp = () => 'Acordando!!';
 const coffe = () => 'Bora tomar café!!';
 const sleep = () => 'Partiu dormir!!';
 
-const doingThings = (callback) => console.log(action());
-doingThings(wakeUp);
+const doingThings = (callback) => console.log(callback());
+doingThings(coffe);

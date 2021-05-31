@@ -21,6 +21,6 @@ function containsA() {
   return ocorrences;
 }
 
-// console.log(containsA());
+console.log(containsA());
 
-assert.deepStrictEqual(containsA(), 20);
+// assert.deepStrictEqual(containsA(), 20);

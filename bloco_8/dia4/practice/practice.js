@@ -86,10 +86,11 @@ const estudantes = [
 ];
 
 const bestSubject = () => {
-  return estudantes.map((estudante) => (
-    { estudante: estudante.nome,
-      melhorMatéria: `${estudante.materias.reduce((acc, materia) => acc.nota > materia.nota ? acc : materia).name}`}
-  ))
+  const newArray = estudantes.map((estudante) => ({ 
+    estudante: estudante.nome,
+    melhorMatéria: `${estudante.materias.reduce((acc, materia) => acc.nota > materia.nota ? acc : materia).name}`
+  }))
+  return newArray;
 }
 
 console.log(bestSubject());

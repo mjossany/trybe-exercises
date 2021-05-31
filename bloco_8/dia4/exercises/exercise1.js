@@ -10,7 +10,7 @@ const arrays = [
 
 function flatten() {
   // escreva seu código aqui
-  return arrays.reduce((acc, crr) => {
+  const newArray = arrays.reduce((acc, crr) => {
     crr.forEach((element) => acc.push(element));
     return acc;
   });

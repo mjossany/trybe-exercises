@@ -12,8 +12,8 @@
 // };
 
 // // Adicione seu código aqui
-// emailListInData.forEach((item) => {
-//   showEmailList(item);
+// emailListInData.forEach((email) => {
+//   showEmailList(email);
 // });
 // ------------------------------------------------------------------------------------------
 
@@ -21,17 +21,22 @@
 
 // const numbers = [19, 21, 30, 3, 45, 22, 15];
 
-// const findDivisibleBy3And5 = () => numbers.find((number) => number % 3 === 0 && number % 5 === 0);
+// const findDivisibleBy3And5 = () => { 
+//   const number = numbers.find((number) => number % 3 === 0 && number % 5 === 0);
+//   return number;
+// };
 
 // console.log(findDivisibleBy3And5());
 // ------------------------------------------------------------------------------------------
 
-// 2 - Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
+// // 2 - Utilize o find para encontrar o primeiro nome com cinco letras, caso ele exista:
 
 // const names = ['João', 'Irene', 'Fernando', 'Maria'];
 
-// const findNameWithFiveLetters = () => names.find((nome) => nome.length === 5);
-
+// const findNameWithFiveLetters = () => { 
+//   const name = names.find((nome) => nome.length === 5);
+//   return name;
+// };
 // console.log(findNameWithFiveLetters());
 // ------------------------------------------------------------------------------------------
 
@@ -45,13 +50,14 @@
 
 // function findMusic(id) {
 //   // Adicione seu código aqui
-//   return musicas.find((music) => music.id === id).title;
+//   const musica = musicas.find((music) => music.id === id).title;
+//   return musica;
 // }
 
 // console.log(findMusic('31031685'));
 // ------------------------------------------------------------------------------------------
 
-// 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
+// // 1 - Escreva uma função que dado um array de nomes e um nome retorne true se ele estiver contido e caso contrário, retorne false , use some ;
 
 // const names = ['Mateus', 'José', 'Ana', 'Cláudia', 'Bruna'];
 
@@ -60,7 +66,7 @@
 //   return arr.some((index) => index === name);
 // }
 
-// console.log(hasName(names, 'Ana'));
+// console.log(hasName(names, 'Cláudia'));
 // ------------------------------------------------------------------------------------------
 
 // // 2 - Escreva uma função que dado um array de pessoas e uma idade mínima retorne true se todas tiverem a idade maior ou igual a mínima e caso contrário false , use every ;
@@ -94,4 +100,4 @@
 
 // // Adicione se código aqui
 
-// console.log(people.sort((a, b) => b.age - a.age));
+// console.log(people.sort((a, b) => a.age - b.age));

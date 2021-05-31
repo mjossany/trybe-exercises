@@ -69,14 +69,13 @@ const books = [
 function smallerName() {
   let nameBook = 'O Chamado de Cthulhu';
   // escreva aqui o seu código
-  books.forEach((index) => {
-    if (index.name.length < nameBook.length) {
-      nameBook = index.name;
+  books.forEach((book) => {
+    if (book.name.length < nameBook.length) {
+      nameBook = book.name;
     }
   })
   // Variável nameBook que receberá o valor do menor nome;
   return nameBook;
 }
-console.log(smallerName());
 
 assert.strictEqual(smallerName(), 'Duna');
