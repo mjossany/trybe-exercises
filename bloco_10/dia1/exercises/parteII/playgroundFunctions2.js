@@ -69,23 +69,20 @@ function techList(arr, name) {
 // }
 // console.log(triangleCheck(10, 14, 8));
 
-// // Desafio 13
-// function hydrate(str) {
-//   let glassesOfWater = 0;
-//   let reg = /\d+/g;
-//   let result = str.match(reg);
-//   for (let index = 0; index < result.length; index += 1) {
-//     glassesOfWater += parseInt(result[index], 10);
-//   }
-//   if (glassesOfWater > 1) {
-//     return `${glassesOfWater} copos de água`;
-//   }
-//   return `${glassesOfWater} copo de água`;
-// }
+// Desafio 13
+function hydrate(str) {
+  let reg = /\d+/g;
+  let result = str.match(reg);
+  const glassesOfWater = result
+  .reduce((acc, curr) => Number(acc) + Number(curr))
+
+  return glassesOfWater > 1 ? `${glassesOfWater} copos de água` : '1 copo de água'
+}
+console.log(hydrate('2 shots de tequila, 2 cervejas e 1 corote'))
 
 module.exports = {
   // generatePhoneNumber,
   techList,
-  // hydrate,
+  hydrate,
   // triangleCheck,
 };
