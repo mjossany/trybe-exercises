@@ -2,11 +2,18 @@ import React from 'react';
 
 
 class Button extends React.Component {
+  constructor() {
+    super()
+    this.handleClick = this.handleClick.bind(this)
+  }
+  handleClick() {
+    const { salute } = this.props
+    console.log(salute);
+  }
   render() {
     const { salute } = this.props
-    const handleClick = () => console.log(salute);
     return (
-      <button onClick={handleClick}>{`Imprime ${salute}`}</button>
+      <button onClick={this.handleClick}>{`Imprime ${salute}`}</button>
     )
   }
 }
