@@ -7,7 +7,7 @@ const arr = ['Oi', 'Hi', 'Hola']
 class App extends React.Component {
   render() {
     return (
-    arr.map((greeting) => <Button salute={greeting}/>)
+    arr.map((greeting, index) => <Button key={index} salute={greeting}/>)
     )
   }
 }
