@@ -45,4 +45,4 @@ db.clientes.aggregate(
       }
     }
   ]
-)
+).itcount()
