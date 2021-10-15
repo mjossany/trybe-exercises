@@ -1,0 +1,18 @@
+db.clientes.aggregate(
+  [
+    {
+      $match: {
+        $and: [
+          {sexo: "FEMININO"},
+          {dataNascimento: {
+            $gte: ISODate("1995-01-01"),
+            $lte: ISODate("2005-12-31")
+          }}
+        ]
+      }
+    },
+    {
+      $limit: 5
+    }
+  ]
+)
