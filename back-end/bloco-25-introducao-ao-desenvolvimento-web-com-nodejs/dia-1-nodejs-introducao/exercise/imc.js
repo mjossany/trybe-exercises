@@ -1,7 +1,7 @@
 const readline = require('readline-sync')
 
-const peso = readline.questionFloat('Qual seu peso?');
-const altura = readline.questionFloat('Qual sua altura?');
+const peso = readline.questionFloat('Qual seu peso? ');
+const altura = readline.questionFloat('Qual sua altura? ');
 let IMC = 0;
 let IMCSituation = '';
 
