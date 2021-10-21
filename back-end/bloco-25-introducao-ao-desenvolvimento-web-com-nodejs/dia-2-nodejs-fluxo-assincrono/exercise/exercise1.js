@@ -1,5 +1,5 @@
 
-const func = (param1, param2, param3) => {
+const calculate = (param1, param2, param3) => {
   return new Promise ((resolve, reject) => {
     if ( isNaN(param1) || isNaN(param2) || isNaN(param3)) {
       console.log(!isNaN(param1))      
@@ -14,6 +14,4 @@ const func = (param1, param2, param3) => {
   })
 }
 
-func(10, 6, 3)
-  .then(result => console.log(`sucesso: ${result}`))
-  .catch(err => console.log(`erro: ${err.message}`))
+module.exports = calculate;
