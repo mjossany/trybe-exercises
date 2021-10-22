@@ -5,7 +5,7 @@ const func = async () => {
   const result = await JSON.parse(data)
   const filtered = await result.filter((character) => +character.id !== 10 && +character.id !== 6)
   const filteredStringfied = JSON.stringify(filtered)
-  await fs.writeFile('./simpsons copy.json', filteredStringfied)
+  await fs.writeFile('./simpsons.json', filteredStringfied)
   console.log('Arquivo escrito com sucesso')
 }
 
