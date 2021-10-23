@@ -29,9 +29,16 @@ describe('Testes do exercício 1', () => {
       const retorno = positivoNegativoNeutro(0)
       expect(retorno).to.be.a('string')
     });
-    it('retorna um "neutro"', () => {
+    it('retorna "neutro"', () => {
       const retorno = positivoNegativoNeutro(0)
       expect(retorno).to.equal('neutro')
     });
   });
+
+  describe('Quando a função recebe como parâmetro um valor que não é do tipo Number', () => {
+    it('retorna "o valor deve ser um número"', () => {
+      const retorno = positivoNegativoNeutro('quatro')
+      expect(retorno).to.equal('o valor deve ser um número')
+    })
+  })
 })
