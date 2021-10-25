@@ -1,13 +1,25 @@
-const express = require('express');
+const express = require('express')
 
-const app = express(); // 1
+const app = express();
 
-app.get('/hello', handleHelloWorldRequest); // 2
+const drinks = [
+  { id: 1, name: 'Refrigerante Lata', price: 5.0 },
+  { id: 2, name: 'Refrigerante 600ml', price: 8.0 },
+  { id: 3, name: 'Suco 300ml', price: 4.0 },
+  { id: 4, name: 'Suco 1l', price: 10.0 },
+  { id: 5, name: 'Cerveja Lata', price: 4.5 },
+  { id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
+];
 
-app.listen(3001, () => {
-  console.log('Aplicação ouvindo na porta 3001');
-}); // 3
+app.get('/drinks/:id', handleDrinkRequest = (req, res) => {
+  const { id } = req.params;
+  const drink = drinks.find((d) => d.id === parseInt(id));
+  
+  if(!drink) return res.status(404).json({message: 'Recipe not found!'})
 
-function handleHelloWorldRequest(req, res) {
-  res.status(200).send('Olá mundo pequeno!'); // 4
-}
+  res.status(200).json(drink);
+});
+
+app.listen(3000, () => {
+  console.log('Aplicação ouvindo na porta 3000')
+});
