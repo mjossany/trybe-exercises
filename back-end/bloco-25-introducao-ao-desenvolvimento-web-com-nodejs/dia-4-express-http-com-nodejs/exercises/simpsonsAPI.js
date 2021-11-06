@@ -1,9 +1,11 @@
 const express = require('express');
 const fs = require('fs').promises;
+const authMiddleware = require('./authMiddleware');
 
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+app.use(authMiddleware);
 
 app.get('/simpsons', async (req, res) => {
   const data = fs.readFileSync('./simpsons.json', 'utf8');
