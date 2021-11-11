@@ -20,8 +20,30 @@ const getBookById = async (id) => {
   return book[0].title;
 }
 
+const getAuthorsIds = async () => {
+  const query = 'SELECT DISTINCT author_id FROM books;'
+  const [numbers] = await connection.execute(query);
+  const arrayNumbers = numbers.map((number) => number.author_id);
+  return arrayNumbers;
+};
+
+const isNewBookValid = async (title, authorId) => {
+  const numbers = await getAuthorsIds();
+  if (!title || title.length < 3) return false;
+  if (!authorId) return false;
+  const exists = numbers.some((number) => number === authorId);
+  console.log(exists);
+  if (!exists) return false;
+
+  return true;
+};
+
+const createBook = async (title, authorId) => connection.execute('INSERT INTO books (title, author_id) VALUES (?, ?)', [title, authorId]);
+
 module.exports = {
   getAll,
   getByAuthorId,
   getBookById,
+  isNewBookValid,
+  createBook
 }
