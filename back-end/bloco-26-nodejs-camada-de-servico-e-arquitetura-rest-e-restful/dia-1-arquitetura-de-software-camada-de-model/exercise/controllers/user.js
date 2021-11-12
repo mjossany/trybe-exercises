@@ -1,6 +1,8 @@
 const {
   insertUser,
   getUsers,
+  updateUserById,
+  findUserById,
 } = require('../models/User');
 
 const createUser = async (req, res, _next) => {
@@ -18,9 +20,23 @@ const getAllUsers = async (_req, res, _next) => {
   const re = await getUsers();
   if (re === null) return res.status(200).json([]);
   return res.status(200).json(re);
-}
+};
+
+const modifyUserById = async (req, res, next) => {
+  const { firstName, lastName, email } = req.body;
+  const { id } = req.params;
+  const re = await updateUserById(id, firstName, lastName, email);
+  console.log(re);
+  if (!re) return res.status(404).json({
+    "error": true,
+    "message": 'Usuário não foi encontrado'
+  });
+  const usuario = await findUserById(id)
+  return res.status(200).json(usuario[0]);
+};
 
 module.exports = {
   createUser,
-  getAllUsers
+  getAllUsers,
+  modifyUserById
 };
