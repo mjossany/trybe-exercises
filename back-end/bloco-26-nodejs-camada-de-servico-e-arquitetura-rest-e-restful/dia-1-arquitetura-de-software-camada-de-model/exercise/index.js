@@ -1,5 +1,6 @@
 const express = require('express');
-const user = require('./routes/userRouter');
+const userRouter = require('./routes/userRouter');
+const error = require('./middlewares/errorHandler');
 
 const app = express();
 app.use(express.json());
@@ -11,7 +12,9 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-app.use('/user', user);
+app.use('/user', userRouter);
+
+app.use(error);
 
 app.listen(PORT, () => {
   console.log('Online');
