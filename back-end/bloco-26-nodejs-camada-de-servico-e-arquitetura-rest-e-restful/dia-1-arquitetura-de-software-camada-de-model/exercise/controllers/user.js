@@ -1,4 +1,7 @@
-const insertUser = require('../models/User');
+const {
+  insertUser,
+  getUsers,
+} = require('../models/User');
 
 const createUser = async (req, res, _next) => {
   const { firstName, lastName, email } = req.body;
@@ -9,6 +12,15 @@ const createUser = async (req, res, _next) => {
     lastName,
     email
   })
+};
+
+const getAllUsers = async (_req, res, _next) => {
+  const re = await getUsers();
+  if (re === null) return res.status(200).json([]);
+  return res.status(200).json(re);
 }
 
-module.exports = createUser;
+module.exports = {
+  createUser,
+  getAllUsers
+};
