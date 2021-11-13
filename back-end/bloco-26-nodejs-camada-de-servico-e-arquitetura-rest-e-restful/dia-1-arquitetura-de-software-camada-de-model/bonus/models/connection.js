@@ -1,22 +1,24 @@
-const { MongoClient } = require('mongodb');
+const mysql = require('mysql2/promise');
 
-const OPTIONS = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
+// let connection = null;
 
-const MONGODB_URL = 'mongodb://127.0.0.1:27017';
+// module.exports = () => {
+//   return connection ? connection : connection = mysql.createPool({
+//     host: 'localhost',
+//     port: 3306,
+//     user: 'root',
+//     password: 'M0urinh4',
+//     database: 'users_crud',
+//   });
+// }
 
-let db = null;
-
-const connection = () => {
-  return db
-  ? Promise.resolve(db)
-  : MongoClient.connect(MONGODB_URL, OPTIONS)
-  .then((conn) => {
-    db = conn.db('model_example');
-    return db;
-  })
-};
+const connection = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  port: 3306,
+  password: 'M0urinh4',
+  database: 'users_crud',
+});
 
 module.exports = connection;
+

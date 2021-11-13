@@ -1,41 +1,20 @@
 const {
   insertUser,
   getUsers,
-  updateUserById,
-  findUserById,
 } = require('../models/User');
 
-const createUser = async (req, res, _next) => {
-  const { firstName, lastName, email } = req.body;
-  const re = await insertUser(firstName, lastName, email);
-  res.status(201).json({
-    id: re.insertedId,
-    firstName,
-    lastName,
-    email
-  })
-};
+const createUser = async (req, res) => {
+  const { firstName, lastName, email, password } = req.body;
+  const response = await insertUser(firstName, lastName, email, password);
+  return res.status(200).json(response);
+}
 
-const getAllUsers = async (_req, res, _next) => {
-  const re = await getUsers();
-  if (re === null) return res.status(200).json([]);
-  return res.status(200).json(re);
-};
+const getAllUsers = async(req, res) => {
+  const response = await getUsers();
+  res.status(200).json(response);
+}
 
-const modifyUserById = async (req, res, next) => {
-  const { firstName, lastName, email } = req.body;
-  const { id } = req.params;
-  const re = await updateUserById(id, firstName, lastName, email);
-  if (!re) return res.status(404).json({
-    "error": true,
-    "message": 'Usuário não foi encontrado'
-  });
-  const usuario = await findUserById(id)
-  return res.status(200).json(usuario[0]);
-};
-
-module.exports = {
+module.exports = { 
   createUser,
   getAllUsers,
-  modifyUserById
 };
