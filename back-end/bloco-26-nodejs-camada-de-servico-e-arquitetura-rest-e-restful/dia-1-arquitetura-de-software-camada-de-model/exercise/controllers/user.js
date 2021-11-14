@@ -26,7 +26,6 @@ const modifyUserById = async (req, res, next) => {
   const { firstName, lastName, email } = req.body;
   const { id } = req.params;
   const re = await updateUserById(id, firstName, lastName, email);
-  console.log(re);
   if (!re) return res.status(404).json({
     "error": true,
     "message": 'Usuário não foi encontrado'
