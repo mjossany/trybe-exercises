@@ -1,5 +1,6 @@
 const express = require('express');
 const root = require('./controllers/root');
+const error = require('./middlewares/error');
 
 const PORT = 3000;
 
