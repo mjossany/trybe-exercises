@@ -1,10 +1,12 @@
 const express = require('express');
 const search = require('./search');
-const addCep = require('./addCep');
+const validateCep = require('../../middlewares/validateCep');
+const processCep = require('../../middlewares/processCep');
+// const addCep = require('./addCep');
 
 const router = express.Router({ mergeParams: true });
 
-router.get('/:cep', search);
+router.get('/:cep', validateCep, processCep, search);
 // router.post('/', addCep);
 
 module.exports = router;
