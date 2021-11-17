@@ -1,6 +1,7 @@
 const service = require('../../services/cep')
 
 module.exports = async (req, res, next) => {
+  console.log('Oi')
   try {
     const cep = req.processedCep;
     const { logradouro, bairro, localidade, uf } = req.body;

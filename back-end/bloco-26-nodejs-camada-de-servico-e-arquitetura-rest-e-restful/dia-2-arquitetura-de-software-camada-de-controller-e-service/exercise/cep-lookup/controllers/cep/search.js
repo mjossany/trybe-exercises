@@ -6,13 +6,8 @@ module.exports = async (req, res, next) => {
 
     const found = await service.findByCep(cep);
 
-    if (found.message) {
-      return res.status(404).json({
-        "error": {
-          "code": found.code,
-          "message": found.message,
-        },
-      });
+    if (found.error) {
+      return res.status(404).json(found);
     };
     return res.status(200).json(found)
   } catch (err) {
