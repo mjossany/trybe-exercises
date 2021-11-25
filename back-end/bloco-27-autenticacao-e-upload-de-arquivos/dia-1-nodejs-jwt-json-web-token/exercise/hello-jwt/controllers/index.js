@@ -3,6 +3,7 @@ const login = require('./login');
 const createUser = require('./createUser');
 const me = require('./me');
 const topSecret = require('./topSecret');
+const signUp = require('./signUp');
 
 module.exports = {
   ping,
@@ -10,4 +11,5 @@ module.exports = {
   createUser,
   me,
   topSecret,
+  signUp,
 };
