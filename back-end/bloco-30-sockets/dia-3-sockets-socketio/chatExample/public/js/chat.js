@@ -11,10 +11,11 @@ form.addEventListener('submit', (e) => {
 });
 
 const createMessage = (message) => {
-  const messagesUl = document.querySelector('#messages');
+  const messageUl = document.querySelector('#messages');
   const li = document.createElement('li');
   li.innerText = message;
-  messagesUl.appendChild(li);
+  messageUl.appendChild(li);
+  return false;
 };
 
 socket.on('serverMessage', (message) => createMessage(message));
