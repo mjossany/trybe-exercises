@@ -14,9 +14,13 @@ const Provider = ({ children }) => {
 
   const increaseCellPhonePrice = useCallback(() => {
     if (cellphonePrice < 100) socket.emit('updateCellphonePrice', { cellphonePrice });
-  });
+  }, [cellphonePrice]);
 
   useEffect(() => { increaseCellPhonePrice(); }, [increaseCellPhonePrice]);
+
+  socket.on('updateCellphonePriceForAll', (newCellPhonePrice) => {
+    setCellPhonePrice(newCellPhonePrice);
+  });
 
   const contextValue = {
     cellphonePrice,
