@@ -11,9 +11,8 @@ const io = require('socket.io')(http, {
   },
 });
 
-require('./sockets/leilao')(io);
+require('./sockets/jogoDaVelha')(io);
 
 http.listen(3001, () => {
-  console.log('Ouvindo na porta 3001');
+  console.log('Ouvindo na porta 3001')
 });
-
