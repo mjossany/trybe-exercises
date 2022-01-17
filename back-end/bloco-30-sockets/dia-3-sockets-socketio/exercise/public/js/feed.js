@@ -29,5 +29,4 @@ const updateStarsNumber = (number) => {
 };
 
 socket.on('updateLikes', (number) => updateLikesNumber(number));
-
 socket.on('updateStars', (number) => updateStarsNumber(number));
