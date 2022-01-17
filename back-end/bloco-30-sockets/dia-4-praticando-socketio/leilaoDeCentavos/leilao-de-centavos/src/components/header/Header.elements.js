@@ -3,7 +3,7 @@ import { Container } from "../../globalStyles";
 
 export const Head = styled.header`
   background: #101522;
-  height: 80px;
+  height: 15%;
   display: flex;
   justify-content: center;
   align-items: center;

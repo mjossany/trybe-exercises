@@ -1,11 +1,16 @@
 import React from 'react';
 import MainScreen from './components/MainScreen';
+import Provider from './context/Provider';
+import GlobalStyle from './globalStyles';
 
 function App() {
   return (
-    <div>
-      <MainScreen />
-    </div>
+    <Provider>
+      <>
+        <GlobalStyle />
+        <MainScreen />
+      </>      
+    </Provider>
   );
 }
 

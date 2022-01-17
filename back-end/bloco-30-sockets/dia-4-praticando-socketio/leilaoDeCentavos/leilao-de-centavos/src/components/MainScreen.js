@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from './header/Header';
+import Header from './Header/Header';
+import ItensSection from './ItensSection/ItensSection';
 
 const MainScreen = () => {
   return(
-    <div>
+    <>
       <Header />
-      
-    </div>
+      <ItensSection />
+    </>
   );
 };
 
